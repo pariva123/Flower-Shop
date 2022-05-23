@@ -1,0 +1,52 @@
+{% extends 'parent.html' %}
+{% block title %}Contact Us | Premier Mart{% endblock %}
+{% load static %}
+{% block content %}
+{% load mytags %}
+
+<div class="contact">
+	  <div class="container">
+		 <ol class="breadcrumb">
+		  <li><a href="{% url 'myhome' %}">Home</a></li>
+		  <li class="active">Contact</li>
+		 </ol>
+			<!---start-contact---->
+			<h3>Contact Us</h3>
+				  <div class="contact-form">
+					    <form action="{% url 'contactus' %}" method="post">
+                            {% csrf_token %}
+					    	<div>
+						    	<span><label>NAME</label></span>
+						    	<span><input name="Name" type="text" class="textbox"></span>
+						    </div>
+						    <div>
+						    	<span><label>E-MAIL</label></span>
+						    	<span><input name="Email" type="text" class="textbox"></span>
+						    </div>
+						    <div>
+						     	<span><label>MOBILE</label></span>
+						    	<span><input name="Phone" type="text" class="textbox"></span>
+						    </div>
+						    <div>
+						    	<span><label>SUBJECT</label></span>
+						    	<span><textarea name="Msg"> </textarea></span>
+						    </div>
+						   <div>
+						   		<span><input type="submit" class="mybutton" value="Submit"></span>
+						  </div>
+					    </form>
+                        {% if messages %}
+					 	<ul>
+							{% for message in messages %}
+							<li>{{ message }}</li>
+							{% endfor %}
+						</ul>
+			     {% endif %}
+				    </div>
+  				</div>
+		  </div>
+	  </div>
+ </div>
+<!---->
+
+{% endblock %}
