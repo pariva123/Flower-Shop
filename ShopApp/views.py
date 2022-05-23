@@ -113,6 +113,8 @@ def showcart(request):
         request.session.save()
         SESSION_KEY = request.session.session_key
         request.session["sid"] = SESSION_KEY
+    elif not "sid" in request.session:
+        request.session["sid"] = request.session.session_key
 
     cartdata = Cart.objects.filter(sessionid=request.session["sid"]).select_related("productid")
     cartcount = cartdata.count
