@@ -4,7 +4,7 @@
 The Flower Shop Management System is a Python-based application designed to manage the operations of a flower shop. This system allows users to manage inventory, process sales, and track customer orders efficiently. The application uses SQLite for database management.
 
 ## Features
-- Inventory management: Add, update, and delete flower items
+- Inventory management: Add, update, and delete flower items.
 - Sales processing: Record and track sales transactions
 - Customer management: Store customer details and order history
 - Reporting: Generate sales and inventory reports
